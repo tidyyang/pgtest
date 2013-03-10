@@ -11,8 +11,9 @@ var EmployeeView = function(employee) {
             function(position) {
                 $('.location', this.el).html(position.coords.latitude + ',' + position.coords.longitude);
             },
-            function() {
+            function(error) {
                 alert('Error getting location');
+								alert(error.message);
             });
         return false;
     };
